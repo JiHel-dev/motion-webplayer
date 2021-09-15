@@ -97,7 +97,8 @@ foreach($filenames as $currentFile) {
 	$subframe_index=$regs[5];
 	if( $using_jpeg_files ) {
 		$frame_filepath = $feed . "/" . $date . "/" . $currentFile;
-		$frame_filehash = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secret_key), $frame_filepath, MCRYPT_MODE_CBC, md5(md5($secret_key))));
+		$frame_filehash = base64_encode($frame_filepath);
+		// $frame_filehash = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secret_key), $frame_filepath, MCRYPT_MODE_CBC, md5(md5($secret_key))));
 	} else {
 		$frame_filehash = "video";
 	}

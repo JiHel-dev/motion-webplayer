@@ -25,7 +25,8 @@ include("config.inc");
 
 if(isset($_GET['frame'])) {
   // decrypt the file path
-  $file=rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secret_key), base64_decode($_GET['frame']), MCRYPT_MODE_CBC, md5(md5($secret_key))), "\0");
+  // $file=rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secret_key), base64_decode($_GET['frame']), MCRYPT_MODE_CBC, md5(md5($secret_key))), "\0");
+  $file = base64_decode($_GET['frame']);
   $filename = trim($image_root . "/" . $file);
   // TODO hashing is not immutable - check for directory traversal attack - file must be a child of $image_root
 } else {

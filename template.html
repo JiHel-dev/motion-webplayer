@@ -1,0 +1,251 @@
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Nyha.zapto.org</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="css/faun.css"> -->
+
+    <!-- token -->
+    <!-- <script src="js/token.js"></script> -->
+
+    <!-- MetisMenu CSS -->
+    <link href="css/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- DataTables CSS -->
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Jquery JS -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Jquery UI CSS -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <!-- Jquery UI JS -->
+    <script src="vendor/jquery-ui/js/jquery-ui.min.js"></script>
+    <!-- Gauge JS -->
+    <!-- <script src="vendor/gauge/js/gauge.min.js"></script> -->
+
+    <!-- Import Leaflet CSS Style Sheet -->
+    <!-- <link rel="stylesheet" href="vendor/leaflet/css/leaflet.css"> -->
+    <!-- <link rel="stylesheet" href="vendor/leaflet/css/leaflet-fullscreen.css"> -->
+    <!-- <link rel="stylesheet" href="vendor/leaflet/css/MarkerCluster.css"> -->
+    <!-- <link rel="stylesheet" href="vendor/leaflet/css/MarkerCluster.Default.css"> -->
+    <!-- Import Leaflet JS Library -->
+    <!-- <script src="vendor/leaflet/js/leaflet.min.js"></script> -->
+    <!-- <script src="vendor/leaflet/js/leaflet-fullscreen.min.js"></script> -->
+    <!-- <script src="vendor/leaflet/js/leaflet.markercluster.js"></script> -->
+
+    <!-- Some icons -->
+    <!-- <link rel="stylesheet" href="vendor/fontawesome-5.7.1/css/all.css"> -->
+    <!-- <link rel="stylesheet" href="vendor/leaflet/css/leaflet.awesome-markers.css"> -->
+    <!-- <script src="vendor/leaflet/js/leaflet.awesome-markers.js"></script> -->
+
+    <!-- Bootstrap select CSS -->
+    <!-- <link rel="stylesheet" href="vendor/bootstrap-select/css/bootstrap-select.min.css"> -->
+    <!-- Bootstrap select CSS -->
+    <!-- <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script> -->
+
+    <!-- Translate -->
+    <!-- <script src="vendor/translate/jquery.translate.js"></script> -->
+
+    <!-- Logout -->
+    <!-- <script src="js/logout.js"></script>   -->
+
+    <!-- Faun utility module-->
+    <!-- <script src="js/faun_modules/faun_utility_module.js"></script> -->
+    <!-- Faun dashboard module-->
+    <!-- <script src="js/faun_modules/faun_dashboard_module.js"></script> -->
+    
+    <!-- custom javascript (Must be the last called script)-->
+    <!-- <script src="js/dashboard.js"></script> -->
+
+<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-left">
+        <a class="navbar-brand" href="http://faun-environnement.fr">
+            <img src="img/faunnavbar.png">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarsDefault">
+            <ul class="navbar-nav" id="sidebar1">
+                <li class="nav-item" id="index_nav_link">
+                    <a class="nav-link active" href="index.php">                            
+                    <i class="fas fa-home"></i>
+                    <span class="trn" data-trn-key="Dashboard">Direct</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="search_nav_link">
+                    <a class="nav-link" href="search.php">
+                        <i class="fas fa-search"></i>
+                        <span class="trn" data-trn-key="search.Vehicle">Historique</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="truck_tracking_nav_link">
+                    <a class="nav-link" href="truck_tracking.php">
+                        <i class="fas fa-location-arrow"></i>
+                        <span class="trn" data-trn-key="geolocation">&Eacute;venement</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- main container -->
+    <div class="container-fluid clearfix" id="wrapper">
+        <div class="row">
+            <!-- Top navbar -->
+            <div class="nav" id="top-bar">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                            <ul class="nav navbar-top-links navbar-left" id="auth_vehicles">
+                                <div class="dropdown bootstrap-select show-tick select-faun" style="width: 218px;"><select class="select-faun selectpicker show-tick mobile-device" id="selectVehicleIdx" data-width="auto" data-live-search="true" data-size="5" data-selected-text-format="count > 3" data-iconbase="fa" data-tickicon="fa-check" tabindex="-98">
+                                    
+                                <option data-icon="fa-truck" value="12345" selected="">12345</option><option data-icon="fa-truck" value="80569" selected="">80569</option><option data-icon="fa-truck" value="75113-02" selected="">75113-02</option><option data-icon="fa-truck" value="80436-08" selected="">80436-08</option><option data-icon="fa-truck" value="80621" selected="">80621</option><option data-icon="fa-truck" value="37272" selected="">37272</option><option data-icon="fa-truck" value="43644" selected="">43644</option><option data-icon="fa-truck" value="80850-02" selected="">80850-02</option><option data-icon="fa-truck" value="80850-06" selected="">80850-06</option><option data-icon="fa-truck" value="80848-02" selected="">80848-02</option><option data-icon="fa-truck" value="80848-03" selected="">80848-03</option><option data-icon="fa-truck" value="80850-04" selected="">80850-04</option><option data-icon="fa-truck" value="80850-05" selected="">80850-05</option><option data-icon="fa-truck" value="80848-01" selected="">80848-01</option><option data-icon="fa-truck" value="80850-13" selected="">80850-13</option><option data-icon="fa-truck" value="80850-14" selected="">80850-14</option><option data-icon="fa-truck" value="80850-12" selected="">80850-12</option><option data-icon="fa-truck" value="80850-11" selected="">80850-11</option><option data-icon="fa-truck" value="80850-15" selected="">80850-15</option><option data-icon="fa-truck" value="80850-09" selected="">80850-09</option><option data-icon="fa-truck" value="80850-10" selected="">80850-10</option><option data-icon="fa-truck" value="80850-08" selected="">80850-08</option><option data-icon="fa-truck" value="80850-07" selected="">80850-07</option><option data-icon="fa-truck" value="80850-01" selected="">80850-01</option><option data-icon="fa-truck" value="21579" selected="">21579</option><option data-icon="fa-truck" value="80816-01" selected="">80816-01</option><option data-icon="fa-truck" value="80816-05" selected="">80816-05</option></select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" data-id="selectVehicleIdx" title="80816-05"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner"><i class="fa fa-truck"></i>&nbsp;80816-05</div></div> </div></button><div class="dropdown-menu " role="combobox" style="min-width: 0px; overflow: hidden; max-height: 214px;"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1" style="overflow-y: auto; max-height: 150px;"><ul class="dropdown-menu inner show"><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">12345</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80569</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">75113-02</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80436-08</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80621</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">37272</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">43644</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-02</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-06</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80848-02</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80848-03</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-04</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-05</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80848-01</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-13</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-14</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-12</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-11</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-15</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-09</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-10</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-08</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-07</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80850-01</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">21579</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80816-01</span></a></li><li class="selected active"><a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true"><span class=" bs-ok-default check-mark"></span><span class="fa fa-truck"></span>&nbsp;<span class="text">80816-05</span></a></li></ul></div></div></div>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+                            <ul class="nav navbar-top-links navbar-right" id="top-links">
+                                <li class="nav-item"><a href="#" class="trn change_language" faun-lang="fr" data-trn-key="<img src=&quot;img/french-flag-32.png&quot;>"><img src="img/french-flag-32.png"></a></li>
+                                <li class="nav-item"><a href="#" class="trn change_language" faun-lang="en" data-trn-key="<img src=&quot;img/english-flag-32.png&quot;>"><img src="img/english-flag-32.png"></a></li>
+                                <div class="dropdown" id="user-info-dropdown">
+                                    <li class="nav-item dropdown-toggle" id="dropdownUserInfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#" id="user-info"><i class="fas fa-user fa-fw"></i>&nbsp;<span>admin</span></a></li>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownUserInfo">
+                                        <div class="row">
+                                            <div class="col-md-12" id="details-user-info">
+                                                <h6 class="dropdown-header trn" data-trn-key="user.Info">Info utilisateur</h6>
+                                                <hr id="hr-dropdown">
+                                            <a id="email" class="dropdown-item" href="#"><i class="fas fa-user fa-fw"></i>&nbsp;<span>Jonathan Luce</span></a><a id="email" class="dropdown-item" href="#"><i class="fas fa-home fa-fw"></i>&nbsp;<span>VEOLIA</span></a><a id="email" class="dropdown-item" href="#"><i class="fas fa-envelope fa-fw"></i>&nbsp;<span>j.luce@faun.fr</span></a><a id="phone" class="dropdown-item" href="#"><i class="fas fa-phone fa-fw"></i>&nbsp;<span>0836656565</span></a></div>
+                                            <hr id="hr-logout">
+                                            <div class="col-md-12" id="logout_div">
+                                                <div class="form-inline input-group" id="logout_div">
+                                                    <span class="input-group-addon faun-icon faun-logout">
+                                                        <i class="fas fa-sign-out-alt fa-fw"></i>
+                                                    </span>
+                                                    <button type="button" id="logout" class="btn btn-faun btn-logout-faun btn-block btn-sm trn" data-trn-key="button.Logout">Déconnexion</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main panel -->
+            <main role="main" class="col-md-12 ml-sm-auto col-lg-12" id="main-dashboard">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <ul class="nav nav-tabs" id="dashboardTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link trn active" id="cam1-tab" data-toggle="tab" href="#cam1" role="tab" aria-controls="cam1" aria-selected="true" data-trn-key="cam1.Tab">Cam1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link trn" id="cam2-tab" data-toggle="tab" href="#cam2" role="tab" aria-controls="cam2" aria-selected="false" data-trn-key="cam2.Tab">Cam2</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="dashboardTabContent">
+                            <div class="tab-pane fade active show" id="cam1" role="tabpanel" aria-labelledby="cam1-tab">
+                                <div class="row" id="main-panel">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                                        <div class="row">
+                                            <div class="col-md-12">
+											
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cam2" role="tabpanel" aria-labelledby="cam2-tab">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Load div -->
+    <div style="display: none;" id="loadingDiv">
+        <div class="loader"></div>
+    </div>
+    <!-- Disconnect div -->
+    <!-- <div id="disconnectDiv"> -->
+        <!-- <div class="modal" id="disconnectModal"> -->
+            <!-- <div class="modal-dialog modal-dialog-centered"> -->
+                <!-- <div class="modal-content"> -->
+                    <!-- <div class="modal-header"> -->
+                        <!-- <h4 class="modal-title"><i class="fas fa-exclamation-triangle" style="color: #dc3545;"></i>&nbsp;<span class="trn" style="color: #dc3545;" data-trn-key="disconnect.ModalTitle">Erreur</span></h4> -->
+                        <!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
+                    <!-- </div> -->
+                    <!-- <div class="modal-body trn" data-trn-key="disconnect.ModalContent">Session expirée. Veuillez vous reconnecter.</div> -->
+                    <!-- <div class="modal-footer" style="justify-content: center;"> -->
+                        <!-- <button type="button" class="btn btn-danger trn" data-dismiss="modal" data-trn-key="button.Close">Fermer</button> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+
+    <!-- Moment JS plugin -->
+    <script src="vendor/moment/js/moment.js"></script>
+    <script src="vendor/moment/js/moment-timezone-with-data.js"></script>
+
+    <!-- Chart.JS bootstrap javascript -->
+    <script src="vendor/chartjs/js/chartjs.min.js"></script>
+    <script src="vendor/chartjs/js/chartjs-plugin-zoom.min.js"></script> 
+    <script src="vendor/chartjs/js/chartjs-plugin-gauge.js"></script>
+    <script src="vendor/chartjs/js/chartjs-plugin-labels.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/globalize/0.1.1/globalize.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Translate -->
+    <script src="js/languages.js"></script> 
+    
+    <!-- Limiter -->
+    <script src="js/faun_modules/faun_limiter.js"></script>
+
+
+
+</body></html>

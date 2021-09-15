@@ -12,9 +12,9 @@
 
 # Settings
 # The root cctv folder
-CCTV_FOLDER="/mnt/cctv"
+CCTV_FOLDER="/media/pi/NAS/motion/webplayer"
 # A space delimted list of parent folders the cctv images are stored in / camera names
-CAM_NAMES="front_door drive gate"
+CAM_NAMES="CAM1"
 # for the cleanup process - the minimum amount of free space before a video needs deleting
 MIN_FREE_SPACE_GB="10"
 
@@ -30,7 +30,7 @@ function getFolderFrameCount() {
 # Begin the process
 
 # Currentley this script is only interested in yesterday but could be changed
-YESTERDAY="$(date +"%Y%m%d" --date="YESTERDAY")"
+YESTERDAY="$(date +"%Y%m%d" --date="2 days ago")"
 DAILYFOLDERS="$YESTERDAY"
 
 # create a list of the full paths to each target folder

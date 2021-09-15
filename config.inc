@@ -18,5 +18,5 @@
   Author: Matthew Watts 2015
 */
 
-$image_root = "/home/www/cams/history/feeds";
-$secret_key = "daspdjp321p4u123rnsadsnpdsao";
+$image_root = "./webplayer";
+$secret_key = "";

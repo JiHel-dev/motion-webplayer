@@ -35,11 +35,19 @@ var currentFeed = '';
 var feeds = new Array();
 var frame_list = new Array();
 var jpeg_mode = true;
+var videopath = '';
 
 
 
 $( document ).ready(function() {
 	// Update Feeds List
+	$.ajax({
+		url: "getpath.php",
+		dataType: "json",
+		success: function(data) {
+			videopath=data;
+		}
+	});
 	$.ajax({
 		url: "feedlist.php",
 		dataType: "json",
@@ -58,7 +66,7 @@ $( document ).ready(function() {
 			alert(request.responseText);
 		}
 	});
-	$("#image1").load(function() {
+	$("#image1").on("load", function() {
 		updateUIPositionInfo();
 		loadNextFrame(PLAYSTATE_NOCHANGE);
 	});
@@ -306,6 +314,8 @@ function updateTimeline() {
 	if(currentFeed != '') {
 		timeUrl = 'timeline.php?feed=' + currentFeed + '&date=' + feedDate;
 		framesUrl =  'frame_list.php?feed=' + currentFeed + '&date=' + feedDate;
+		console.log("Current feed : ", currentFeed);
+		console.log("Feed date : ", feedDate);
 	} else {
 		timeUrl = 'timeline.php';
 	}
@@ -322,7 +332,7 @@ function updateTimeline() {
 			if ( frame_list[0]['frame_filehash'] == "video" ) {
 				$('#image1').css("display", "none");
 				$('#video1').css("display", "block");
-				$('#video1').attr('src',"files/" + frame_list[0]['frame_filename']);
+				$('#video1').attr('src',videopath + "/" + frame_list[0]['frame_filename']);
 				setTimeout(function(){ video1.load;	video1.play(); video1.pause(); }, 1000);
 				jpeg_mode = true;
 			} else {
