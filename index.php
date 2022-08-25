@@ -19,7 +19,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/jquery-3.5.1.min.js"></script>
 	<script language="JavaScript" type="text/javascript" src="player.js"></script>
 	<title>motion-webplayer</title>
 </head>
@@ -38,7 +38,7 @@
 		<span></span>
 		<img id='loading_frameimage' src='images/loading_spinner.gif'>
 		<img src=images/nofeed.gif id='image1' style='display:none'>
-		<video src="" id='video1' style='display:none'></video>
+		<video src="" type="video/mp4" id='video1' style='display:none' preload="metadata"></video>
 		<span></span>
 	</div>
 	<div id='footer_container'>
