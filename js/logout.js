@@ -1,0 +1,21 @@
+$(function(){
+    $('#logout').click(function(event){
+        event.preventDefault();
+        token='';
+        window.localStorage.removeItem('token');
+        window.localStorage.removeItem('truckList');
+        window.localStorage.removeItem('userInfo');
+        window.localStorage.removeItem('selectedVehicletab');
+        window.localStorage.removeItem('aggregationValue');
+        window.localStorage.removeItem('displayEmptyingPlace');
+        window.localStorage.removeItem('start_timestamp');
+        window.localStorage.removeItem('end_timestamp');
+        window.localStorage.removeItem('timezone');
+        window.localStorage.removeItem('pathData');
+        window.localStorage.removeItem('address');
+        window.localStorage.removeItem('language');
+        window.localStorage.removeItem('maintenanceEvent');
+        window.localStorage.removeItem('eventList');
+        window.location ='login.php';
+    });
+});
