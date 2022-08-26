@@ -1,41 +1,41 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>Nyha.zapto.org</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Nyha.zapto.org</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
-    <!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	  
-	<!-- JQuery -->
-	<script src="js/jquery-3.5.1.min.js"></script>
-	<script language="JavaScript" type="text/javascript" src="player.js"></script>
-	  
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <!--script language="JavaScript" type="text/javascript" src="player.js"></script-->
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-  </head>
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="dashboard.css" rel="stylesheet">
+</head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">CCTV</a>
@@ -73,76 +73,66 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> -->
-		<!-- <h1 class="h2">Dashboard</h1> -->
-		<ul class="nav nav-tabs">
-		  <li class="nav-item" role="presentation">
-			<a class="nav-link active" id="cam1-tab" data-toggle="tab" href="#cam1" role="tab" aria-controls="cam1" aria-selected="true">Cam&eacute;ra 1</a>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<a class="nav-link" id="cam2-tab" data-toggle="tab" href="#cam2" role="tab" aria-controls="cam2" aria-selected="true">Cam&eacute;ra 2</a>
-		  </li>
-		  <!--<li class="nav-item" role="presentation">
-			<a class="nav-link" id="cam3-tab" data-toggle="tab" href="#cam3" role="tab" aria-controls="cam3" aria-selected="true">Cam&eacute;ra 3</a>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<a class="nav-link disabled" id="cam4-tab" data-toggle="tab" href="#cam4" role="tab" aria-controls="cam4" aria-selected="true">Cam&eacute;ra 4</a>
-		  </li>-->
-		</ul>
-		<div class="tab-content">
-			<div id='header'>
-				<span id='feedbuttons_container'>
-				</span>
-				<span id='datePicker_container'>
-					<select id="txtFeedDate" name="txtFeedDate">
-						<option disabled selected>--select a date--</option>
-					</select>
-				</span>
-			</div>
-			<div id='frames_container'>
-				<span></span>
-				<img id='loading_frameimage' src='images/loading_spinner.gif'>
-				<img src=images/nofeed.gif id='image1' style='display:none'>
-				<video src="" id='video1' style='display:none'></video>
-				<span></span>
-			</div>
-			<div id='footer_container'>
-				<div id='progress_container'>
-					<img src=timeline.php id='timeline' onMouseMove="return tl_move(event);" onMouseOut="return tl_out();" onClick="return tl_click();">
-					<progress id='progress-bar' min='0' max='100' value='50'>0% played</progress>
-				</div>
-				<div id='player_controls_container'>
-					<span></span>
-					<img src="images/rewind.gif" onClick="loadNextFrame(PLAYSTATE_STEP_START);" alt="|<" title="Rewind to start of day">
-					<img src="images/stepback.gif" onClick="loadNextFrame(PLAYSTATE_STEP_BACKWARDS);" alt="<|" title="Go back one frame">
-					<img src="images/playback.gif" onClick="loadNextFrame(PLAYSTATE_PLAY_BACKWARDS);" alt="<" title="Play backwards">
-					<img src="images/stop.gif" onClick="loadNextFrame(PLAYSTATE_STOPPED);" alt="||" title="Stop playing">
-					<img src="images/playfrwd.gif" onClick="loadNextFrame(PLAYSTATE_PLAY_FORWARDS);" alt=">" title="Play forwards">
-					<img src="images/stepfrwd.gif" onClick="loadNextFrame(PLAYSTATE_STEP_FORWARDS);" alt="|>" title="Go forward one frame">
-					<img src="images/playend.gif" onClick="loadNextFrame(PLAYSTATE_STEP_END);" alt=">|" title="Go forward to end of day">
-					<span id='timeText_container'>
-						<input type="text" size="2" maxlength="2" value="00" id="frameTime_HH">:
-						<input type="text" size="2" maxlength="2" value="00" id="frameTime_MM">:
-						<input type="text" size="2" maxlength="2" value="00" id="frameTime_SS">-
-						<input type="text" size="2" maxlength="2" value="00" id="frameTime_FF">
-					</span>
-					<span></span>
-				</div>
-			</div>
-		  <!--<div class="tab-pane active" id="cam1" role="tabpanel" aria-labelledby="cam1-tab">
-			<img src="http://192.168.1.12:8081/1/stream">
-		  </div>
-		  <div class="tab-pane" id="cam2" role="tabpanel" aria-labelledby="cam2-tab">
-			<img style="-webkit-user-select: none;margin: auto;" src="http://192.168.1.12:8081/2/stream">
-		  </div>-->
-		  <!--<div class="tab-pane" id="cam3" role="tabpanel" aria-labelledby="cam3-tab">...3</div>
-		  <div class="tab-pane" id="cam4" role="tabpanel" aria-labelledby="cam4-tab">...4</div>-->
-		</div>
+      <!-- <h1 class="h2">Dashboard</h1> -->
+      <div class="row">
+        <ul class="nav nav-tabs">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="cam1-tab" data-toggle="tab" href="#cam1" role="tab" aria-controls="cam1" aria-selected="true">Cam&eacute;ra 1</a>
+          </li>
+          <!--li class="nav-item" role="presentation">
+            <a class="nav-link" id="cam2-tab" data-toggle="tab" href="#cam2" role="tab" aria-controls="cam2" aria-selected="true">Cam&eacute;ra 2</a>
+          </li-->
+          <!--<li class="nav-item" role="presentation">
+            <a class="nav-link" id="cam3-tab" data-toggle="tab" href="#cam3" role="tab" aria-controls="cam3" aria-selected="true">Cam&eacute;ra 3</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link disabled" id="cam4-tab" data-toggle="tab" href="#cam4" role="tab" aria-controls="cam4" aria-selected="true">Cam&eacute;ra 4</a>
+          </li>-->
+        </ul>
+      </div>
+      <!--<div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <span id='feedbuttons_container'>
+          </span>
+          <span id='datePicker_container'>
+              <select id="txtFeedDate" name="txtFeedDate">
+                  <option disabled selected>&#45;&#45;select a date&#45;&#45;</option>
+              </select>
+          </span>
+      </div>
+      <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <span></span>
+          <img class="img-fluid" id='loading_frameimage' src='images/loading_spinner.gif'>
+          <img src=images/nofeed.gif id='image1' style='display:none'>
+          <video src="" id='video1' style='display:none'></video>
+          <span></span>
+      </div>-->
+      <div class="row">
+        <!--<div class="col-md-9 ml-sm-auto col-lg-10 px-md-4" id="progress_container">
+            <img src=timeline.php id='timeline' onMouseMove="return tl_move(event);" onMouseOut="return tl_out();" onClick="return tl_click();">
+            <progress id='progress-bar' min='0' max='100' value='50'>0% played</progress>
+        </div>-->
+        <div class="col px-0"><img class="img-fluid" src="images/rewind.gif" onClick="loadNextFrame(PLAYSTATE_STEP_START);" alt="|<" title="Rewind to start of day" style="width: auto"></div>
+        <div class="col px-0"><img class="img-fluid" src="images/stepback.gif" onClick="loadNextFrame(PLAYSTATE_STEP_BACKWARDS);" alt="<|" title="Go back one frame"></div>
+        <div class="col px-0"><img class="img-fluid" src="images/playback.gif" onClick="loadNextFrame(PLAYSTATE_PLAY_BACKWARDS);" alt="<" title="Play backwards"></div>
+        <div class="col px-0"><img class="img-fluid" src="images/stop.gif" onClick="loadNextFrame(PLAYSTATE_STOPPED);" alt="||" title="Stop playing"></div>
+        <div class="col px-0"><img class="img-fluid" src="images/playfrwd.gif" onClick="loadNextFrame(PLAYSTATE_PLAY_FORWARDS);" alt=">" title="Play forwards"></div>
+        <div class="col px-0"><img class="img-fluid" src="images/stepfrwd.gif" onClick="loadNextFrame(PLAYSTATE_STEP_FORWARDS);" alt="|>" title="Go forward one frame"></div>
+        <div class="col px-0"><img class="img-fluid" src="images/playend.gif" onClick="loadNextFrame(PLAYSTATE_STEP_END);" alt=">|" title="Go forward to end of day"></div>
+        <!--<div class="row">
+            <span>
+                <input type="text" size="2" maxlength="2" value="00" id="frameTime_HH">:
+                <input type="text" size="2" maxlength="2" value="00" id="frameTime_MM">:
+                <input type="text" size="2" maxlength="2" value="00" id="frameTime_SS">-
+                <input type="text" size="2" maxlength="2" value="00" id="frameTime_FF">
+            </span>
+        </div>-->
+      </div>
       <!--</div>-->
-     </main>
+    </main>
   </div>
 </div>
-	  <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="dashboard.js"></script></body>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="dashboard.js"></script></body>
 <!-- Footer -->
 <footer class="page-footer font-small blue">
 
