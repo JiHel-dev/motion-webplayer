@@ -118,14 +118,12 @@
         <div class="col px-0"><img class="img-fluid" src="images/playfrwd.gif" onClick="loadNextFrame(PLAYSTATE_PLAY_FORWARDS);" alt=">" title="Play forwards"></div>
         <div class="col px-0"><img class="img-fluid" src="images/stepfrwd.gif" onClick="loadNextFrame(PLAYSTATE_STEP_FORWARDS);" alt="|>" title="Go forward one frame"></div>
         <div class="col px-0"><img class="img-fluid" src="images/playend.gif" onClick="loadNextFrame(PLAYSTATE_STEP_END);" alt=">|" title="Go forward to end of day"></div>
-        <!--<div class="row">
-            <span>
-                <input type="text" size="2" maxlength="2" value="00" id="frameTime_HH">:
-                <input type="text" size="2" maxlength="2" value="00" id="frameTime_MM">:
-                <input type="text" size="2" maxlength="2" value="00" id="frameTime_SS">-
-                <input type="text" size="2" maxlength="2" value="00" id="frameTime_FF">
-            </span>
-        </div>-->
+        <div class="col-md-3 px-0" id="timeText_container">
+          <input type="text" size="2" maxlength="2" value="00" id="frameTime_HH">:
+          <input type="text" size="2" maxlength="2" value="00" id="frameTime_MM">:
+          <input type="text" size="2" maxlength="2" value="00" id="frameTime_SS">-
+          <input type="text" size="2" maxlength="2" value="00" id="frameTime_FF">
+        </div>
       </div>
       <!--</div>-->
     </main>

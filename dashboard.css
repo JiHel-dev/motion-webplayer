@@ -68,6 +68,10 @@ body {
   text-transform: uppercase;
 }
 
+#timeText_container input {
+  font-size: 15px; width: 20px; border-width:0px; border:none;
+}
+
 /*
  * Navbar
  */
