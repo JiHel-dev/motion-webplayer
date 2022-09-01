@@ -112,4 +112,4 @@ foreach($filenames as $currentFile) {
 	$frames[] = $frameinfo;
 }
 
-echo json_encode($frames);
+echo json_encode($frames, JSON_THROW_ON_ERROR | JSON_INVALID_UTF8_SUBSTITUTE);

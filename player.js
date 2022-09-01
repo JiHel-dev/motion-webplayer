@@ -31,7 +31,7 @@ var PLAYSTATE_STEP_END = 6;
 var frame=-1;
 var frameStep = 1;
 var playState = PLAYSTATE_STOPPED;
-var currentFeed = '';
+var currentFeed = 'CAM1';
 var feeds = new Array();
 var frame_list = new Array();
 var jpeg_mode = true;
@@ -55,12 +55,13 @@ $( document ).ready(function() {
 			feeds=data;
 			var feedsHTML = "";
 			for (currentFeedIndex in feeds) {
-				feedsHTML += "<span id='" + feeds[currentFeedIndex][0] + 
-				"' data-feed='" + feeds[currentFeedIndex][0] + 
+				feedsHTML += "<span id='" + feeds[currentFeedIndex][0] +
+				"' data-feed='" + feeds[currentFeedIndex][0] +
 				"' class='feedUnSelect'>" + feeds[currentFeedIndex][0] +"</span>";
 			}
 			destDiv = document.getElementById('feedbuttons_container');
 			destDiv.innerHTML = feedsHTML;
+			enterFeed(currentFeed)
 		},
 		error: function (request, status, error) {
 			alert(request.responseText);
@@ -80,7 +81,7 @@ $( document ).ready(function() {
 			updateUIPositionInfo();
 		}
 	});
-	$('#feedbuttons_container').on('click', '.feedUnSelect', function() {
+	$('#cam1').on('click', '.feedUnSelect', function() {
 		enterFeed($(this).data("feed"));
 	});
 	$('#txtFeedDate').on('change', function() {

@@ -32,15 +32,6 @@
 	min-width: 100%;
 }
 
-/* Feed selection */
-#feedbuttons_container {
-	position: absolute;
-	height: 20px;
-	font-size: 1em;
-	top: 8px;
-	left: 4px;
-}
-
 #datePicker_container {
 	position: absolute;
 	height: 20px;
