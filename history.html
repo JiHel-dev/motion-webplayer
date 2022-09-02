@@ -99,12 +99,16 @@
           <span id='feedbuttons_container'>
           </span>
       </div>
-      <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="row">
+        <div class="col-12">
           <span></span>
           <img class="img-fluid" id='loading_frameimage' src='images/loading_spinner.gif'>
-          <img src=images/nofeed.gif id='image1' style='display:none'>
-          <video src="" id='video1' style='display:none'></video>
+          <img class="img-fluid" src=images/nofeed.gif id='image1' style='display:none'>
+          <div class="embed-responsive embed-responsive-16by9" id="video1_container" style="display:none">
+            <video class="embed-responsive-item" src="" id='video1' style='display:none'></video>
+          </div>
           <span></span>
+        </div>
       </div>
       <div class="row">
         <div class="col-12 progress" id="progress_container">

@@ -334,11 +334,13 @@ function updateTimeline() {
 				$('#image1').css("display", "none");
 				$('#video1').css("display", "block");
 				$('#video1').attr('src',videopath + "/" + frame_list[0]['frame_filename']);
+                $('#video1_container').css("display", "block");
 				setTimeout(function(){ video1.load;	video1.play(); video1.pause(); }, 1000);
 				jpeg_mode = true;
 			} else {
 				$('#image1').css("display", "block");
 				$('#video1').css("display", "none");
+                $('#video1_container').css("display", "none");
 				jpeg_mode = false;
 			}
 		}
