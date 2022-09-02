@@ -68,8 +68,7 @@ $( document ).ready(function() {
 		}
 	});
 	$("#image1").on("load", function() {
-		updateUIPositionInfo();
-		loadNextFrame(PLAYSTATE_NOCHANGE);
+		NewFrameThread();
 	});
 	$("#video1").on("timeupdate", function (e) {
 		frameTime = 1 / 25; //assume 25 fps
@@ -430,6 +429,13 @@ function tl_click() {
   loadNextFrame(PLAYSTATE_RESET);
 } 
 
+async function NewFrameThread()
+{
+	let frameTime = 1 / 25
+	updateUIPositionInfo();
+	await new Promise(r => setTimeout(r, 1000*frameTime));
+	loadNextFrame(PLAYSTATE_NOCHANGE);
+}
 
 
 
