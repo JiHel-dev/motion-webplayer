@@ -232,8 +232,7 @@ function updateUIPositionInfo() {
 	}
 
 	// select progress bar and ensure it is ready
-	var progressBar = document.getElementById('progress-bar');
-	progressBar.max = 24 * 60 * 60; // seconds in a day
+	let progressBar = document.getElementById('progressBar');
 
 	// get the time from the current frame (in seconds from midnight) - convert into hh mm ss and subframe number
 	currentFrameFullSeconds = frame_list[Number(frame)]['frame_seconds'];
@@ -254,7 +253,9 @@ function updateUIPositionInfo() {
 	$('#frameTime_MM').attr('value',currentFrameMins);
 	$('#frameTime_SS').attr('value',currentFrameSeconds);
 	$('#frameTime_FF').attr('value',currentFrameIndex);
-	progressBar.value = Number(frame_list[Number(frame)]['frame_seconds']);
+	//$('#progressBar').css('wif',Number(frame_list[Number(frame)]['frame_seconds'])).attr('aria-valuemax',24 * 60 * 60);
+
+	progressBar.style.width = String(100*Number(frame_list[Number(frame)]['frame_seconds'])/24/60/60)+"%";
 }
 
 function getFrameNearestToSeconds(secondsTime) {

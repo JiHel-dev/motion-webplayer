@@ -111,9 +111,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 progress" id="progress_container">
-            <img src=timeline.php class="overlay" id='timeline'> <!--onMouseMove="return tl_move(event);" onMouseOut="return tl_out();" onClick="return tl_click();"-->
-            <div id='progress-bar' class="progress-bar" role="progressbar" aria-valuemin='0' aria-valuemax='100' aria-valuenow='50'>0% played</div>
+        <div class="col-12 px-0 progress" id="progress_container">
+          <img src=timeline.php id='timeline' onMouseMove="return tl_move(event);" onMouseOut="return tl_out();" onClick="return tl_click();">
+          <div id='progressBar' class="progress-bar" role="progressbar" style="width: 0%;"></div>
         </div>
       </div>
       <div class="row">

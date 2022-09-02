@@ -109,6 +109,24 @@ body {
 img {
     width: auto;
     height: auto;
-	max-width: 1000px;
+	max-width: 2000px;
 	min-width: 40px;
+}
+
+#progress_container {
+  height: 20px; min-height: 6px; max-width: 100%;
+}
+
+#progress_container progress {
+  position: absolute; top: 0; z-index: 9000;
+}
+
+#progress_container img {
+  position: absolute; top: 0; z-index: 9010; height: 20px; display: block;
+  width: 100%;
+}
+
+#timeText_container {
+  text-align: center;
+  vertical-align: middle;
 }
